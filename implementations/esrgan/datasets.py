@@ -1,12 +1,10 @@
 import glob
-import random
-import os
-import numpy as np
 
+import numpy as np
 import torch
-from torch.utils.data import Dataset
-from PIL import Image
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import Dataset
 
 # Normalization parameters for pre-trained PyTorch models
 mean = np.array([0.485, 0.456, 0.406])

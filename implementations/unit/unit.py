@@ -1,25 +1,18 @@
 import argparse
-import os
-import numpy as np
-import math
-import itertools
 import datetime
-import time
+import itertools
+import os
 import sys
+import time
 
-import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
-from torch.utils.data import DataLoader
-from torchvision import datasets
-from torch.autograd import Variable
-
-from models import *
-from datasets import *
-
-import torch.nn as nn
-import torch.nn.functional as F
+import numpy as np
 import torch
+import torchvision.transforms as transforms
+from datasets import *
+from models import *
+from torch.autograd import Variable
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--epoch", type=int, default=0, help="epoch to start training from")
@@ -220,16 +213,16 @@ for epoch in range(opt.epoch, opt.n_epochs):
 
         # Total loss
         loss_G = (
-            loss_KL_1
-            + loss_KL_2
-            + loss_ID_1
-            + loss_ID_2
-            + loss_GAN_1
-            + loss_GAN_2
-            + loss_KL_1_
-            + loss_KL_2_
-            + loss_cyc_1
-            + loss_cyc_2
+                loss_KL_1
+                + loss_KL_2
+                + loss_ID_1
+                + loss_ID_2
+                + loss_GAN_1
+                + loss_GAN_2
+                + loss_KL_1_
+                + loss_KL_2_
+                + loss_cyc_1
+                + loss_cyc_2
         )
 
         loss_G.backward()

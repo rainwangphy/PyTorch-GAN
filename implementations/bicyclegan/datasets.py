@@ -1,11 +1,10 @@
 import glob
-import random
 import os
+
 import numpy as np
-import torch
-from torch.utils.data import Dataset
-from PIL import Image
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import Dataset
 
 
 class ImageDataset(Dataset):
@@ -21,7 +20,6 @@ class ImageDataset(Dataset):
         self.files = sorted(glob.glob(os.path.join(root, mode) + "/*.*"))
 
     def __getitem__(self, index):
-
         img = Image.open(self.files[index % len(self.files)])
         w, h = img.size
         img_A = img.crop((0, 0, w / 2, h))

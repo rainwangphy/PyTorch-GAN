@@ -1,19 +1,15 @@
 import argparse
-import os
-import numpy as np
-import math
 import itertools
+import os
 
+import numpy as np
+import torch
+import torch.nn as nn
 import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
+from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision import datasets
-from torch.autograd import Variable
-
-import torch.nn as nn
-import torch.nn.functional as F
-import torch
+from torchvision.utils import save_image
 
 os.makedirs("images/static/", exist_ok=True)
 os.makedirs("images/varying_c1/", exist_ok=True)

@@ -10,23 +10,16 @@ Instrustion on running the script:
 
 import argparse
 import os
-import numpy as np
-import math
-import itertools
 import sys
 
-import torchvision.transforms as transforms
-from torchvision.utils import save_image, make_grid
-
-from torch.utils.data import DataLoader
-from torch.autograd import Variable
-
-from models import *
-from datasets import *
-
-import torch.nn as nn
-import torch.nn.functional as F
+import numpy as np
 import torch
+import torch.nn as nn
+from datasets import *
+from models import *
+from torch.autograd import Variable
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image, make_grid
 
 os.makedirs("images", exist_ok=True)
 os.makedirs("saved_models", exist_ok=True)

@@ -1,12 +1,10 @@
 import glob
-import random
-import os
+
 import numpy as np
 import torch
-
-from torch.utils.data import Dataset
-from PIL import Image
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import Dataset
 
 
 class CelebADataset(Dataset):

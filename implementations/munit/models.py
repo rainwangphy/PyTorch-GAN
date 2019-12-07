@@ -1,8 +1,6 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch
-from torch.autograd import Variable
-import numpy as np
 
 
 def weights_init_normal(m):
@@ -90,13 +88,13 @@ class Decoder(nn.Module):
             if m.__class__.__name__ == "AdaptiveInstanceNorm2d":
                 # Extract mean and std predictions
                 mean = adain_params[:, : m.num_features]
-                std = adain_params[:, m.num_features : 2 * m.num_features]
+                std = adain_params[:, m.num_features: 2 * m.num_features]
                 # Update bias and weight
                 m.bias = mean.contiguous().view(-1)
                 m.weight = std.contiguous().view(-1)
                 # Move pointer
                 if adain_params.size(1) > 2 * m.num_features:
-                    adain_params = adain_params[:, 2 * m.num_features :]
+                    adain_params = adain_params[:, 2 * m.num_features:]
 
     def forward(self, content_code, style_code):
         # Update AdaIN parameters by MLP prediction based off style code
@@ -282,7 +280,7 @@ class AdaptiveInstanceNorm2d(nn.Module):
 
     def forward(self, x):
         assert (
-            self.weight is not None and self.bias is not None
+                self.weight is not None and self.bias is not None
         ), "Please assign weight and bias before calling AdaIN!"
         b, c, h, w = x.size()
         running_mean = self.running_mean.repeat(b)

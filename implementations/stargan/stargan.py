@@ -9,30 +9,22 @@ Instructions on running the script:
 4. Run the script by 'python3 stargan.py'
 """
 
-
 import argparse
-import os
-import numpy as np
-import math
-import itertools
-import time
 import datetime
+import os
 import sys
+import time
 
-import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
-from torch.utils.data import DataLoader
-from torchvision import datasets
-from torch.autograd import Variable
-import torch.autograd as autograd
-
-from models import *
-from datasets import *
-
-import torch.nn as nn
-import torch.nn.functional as F
+import numpy as np
 import torch
+import torch.autograd as autograd
+import torch.nn.functional as F
+import torchvision.transforms as transforms
+from datasets import *
+from models import *
+from torch.autograd import Variable
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
 
 os.makedirs("images", exist_ok=True)
 os.makedirs("saved_models", exist_ok=True)

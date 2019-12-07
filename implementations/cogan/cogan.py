@@ -1,22 +1,15 @@
 import argparse
 import os
-import numpy as np
-import math
-import scipy
-import itertools
 
 import mnistm
-
+import numpy as np
+import torch
+import torch.nn as nn
 import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
+from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision import datasets
-from torch.autograd import Variable
-
-import torch.nn as nn
-import torch.nn.functional as F
-import torch
+from torchvision.utils import save_image
 
 os.makedirs("images", exist_ok=True)
 
@@ -223,11 +216,11 @@ for epoch in range(opt.n_epochs):
         validity1_fake, validity2_fake = coupled_discriminators(gen_imgs1.detach(), gen_imgs2.detach())
 
         d_loss = (
-            adversarial_loss(validity1_real, valid)
-            + adversarial_loss(validity1_fake, fake)
-            + adversarial_loss(validity2_real, valid)
-            + adversarial_loss(validity2_fake, fake)
-        ) / 4
+                         adversarial_loss(validity1_real, valid)
+                         + adversarial_loss(validity1_fake, fake)
+                         + adversarial_loss(validity2_real, valid)
+                         + adversarial_loss(validity2_fake, fake)
+                 ) / 4
 
         d_loss.backward()
         optimizer_D.step()

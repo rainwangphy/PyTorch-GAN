@@ -1,27 +1,19 @@
 import argparse
-import os
-import numpy as np
-import math
+import datetime
 import itertools
-import scipy
+import os
 import sys
 import time
-import datetime
 
-import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
-from torch.utils.data import DataLoader
-from torchvision import datasets
-from torch.autograd import Variable
+import numpy as np
+import torch
 import torch.autograd as autograd
-
+import torchvision.transforms as transforms
 from datasets import *
 from models import *
-
-import torch.nn as nn
-import torch.nn.functional as F
-import torch
+from torch.autograd import Variable
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
 
 os.makedirs("images", exist_ok=True)
 
@@ -198,7 +190,6 @@ for epoch in range(opt.n_epochs):
         optimizer_D_B.step()
 
         if i % opt.n_critic == 0:
-
             # ------------------
             #  Train Generators
             # ------------------

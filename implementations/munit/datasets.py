@@ -1,11 +1,10 @@
 import glob
-import random
 import os
-import numpy as np
 
-from torch.utils.data import Dataset
-from PIL import Image
+import numpy as np
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import Dataset
 
 
 class ImageDataset(Dataset):

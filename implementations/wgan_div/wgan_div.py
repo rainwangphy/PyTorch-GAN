@@ -1,20 +1,15 @@
 import argparse
 import os
+
 import numpy as np
-import math
-import sys
-
+import torch
+import torch.autograd as autograd
+import torch.nn as nn
 import torchvision.transforms as transforms
-from torchvision.utils import save_image
-
+from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision import datasets
-from torch.autograd import Variable
-
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.autograd as autograd
-import torch
+from torchvision.utils import save_image
 
 os.makedirs("images", exist_ok=True)
 
@@ -85,7 +80,6 @@ class Discriminator(nn.Module):
 
 k = 2
 p = 6
-
 
 # Initialize generator and discriminator
 generator = Generator()

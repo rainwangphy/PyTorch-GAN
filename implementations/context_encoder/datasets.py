@@ -1,11 +1,9 @@
 import glob
-import random
-import os
-import numpy as np
 
-from torch.utils.data import Dataset
-from PIL import Image
+import numpy as np
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import Dataset
 
 
 class ImageDataset(Dataset):
@@ -32,7 +30,7 @@ class ImageDataset(Dataset):
         # Get upper-left pixel coordinate
         i = (self.img_size - self.mask_size) // 2
         masked_img = img.clone()
-        masked_img[:, i : i + self.mask_size, i : i + self.mask_size] = 1
+        masked_img[:, i: i + self.mask_size, i: i + self.mask_size] = 1
 
         return masked_img, i
 

@@ -10,23 +10,15 @@ Instrustion on running the script:
 
 import argparse
 import os
+
 import numpy as np
-import math
-import itertools
-import sys
-
-import torchvision.transforms as transforms
-from torchvision.utils import save_image, make_grid
-
-from torch.utils.data import DataLoader
-from torch.autograd import Variable
-
-from models import *
-from datasets import *
-
-import torch.nn as nn
-import torch.nn.functional as F
 import torch
+import torch.nn as nn
+from datasets import *
+from models import *
+from torch.autograd import Variable
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
 
 os.makedirs("images/training", exist_ok=True)
 os.makedirs("saved_models", exist_ok=True)
@@ -192,4 +184,4 @@ for epoch in range(opt.epoch, opt.n_epochs):
         if batches_done % opt.checkpoint_interval == 0:
             # Save model checkpoints
             torch.save(generator.state_dict(), "saved_models/generator_%d.pth" % epoch)
-            torch.save(discriminator.state_dict(), "saved_models/discriminator_%d.pth" %epoch)
+            torch.save(discriminator.state_dict(), "saved_models/discriminator_%d.pth" % epoch)
