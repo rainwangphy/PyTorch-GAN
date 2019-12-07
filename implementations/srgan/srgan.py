@@ -12,14 +12,12 @@ import argparse
 import os
 import sys
 
-import numpy as np
-import torch
-import torch.nn as nn
-from .datasets import *
-from .models import *
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image, make_grid
+
+from .datasets import *
+from .models import *
 
 os.makedirs("images", exist_ok=True)
 os.makedirs("saved_models", exist_ok=True)

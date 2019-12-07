@@ -1,18 +1,15 @@
 import argparse
 import datetime
 import itertools
-import os
-import time
 import sys
+import time
 
 import numpy as np
-import torch
-import torchvision.transforms as transforms
-from .datasets import *
-from .models import *
-from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image, make_grid
+
+from .datasets import *
+from .models import *
 from .utils import *
 
 parser = argparse.ArgumentParser()

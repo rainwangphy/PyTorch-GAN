@@ -7,11 +7,12 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
-from .mnistm import MNISTM
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.utils import save_image
+
+from .mnistm import MNISTM
 
 os.makedirs("images", exist_ok=True)
 

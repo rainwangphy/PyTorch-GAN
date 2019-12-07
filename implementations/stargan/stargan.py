@@ -15,16 +15,14 @@ import os
 import sys
 import time
 
-import numpy as np
-import torch
 import torch.autograd as autograd
 import torch.nn.functional as F
-import torchvision.transforms as transforms
-from .datasets import *
-from .models import *
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image
+
+from .datasets import *
+from .models import *
 
 os.makedirs("images", exist_ok=True)
 os.makedirs("saved_models", exist_ok=True)
