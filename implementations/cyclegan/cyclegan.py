@@ -3,16 +3,17 @@ import datetime
 import itertools
 import os
 import time
+import sys
 
 import numpy as np
 import torch
 import torchvision.transforms as transforms
-from datasets import *
-from models import *
+from .datasets import *
+from .models import *
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image, make_grid
-from utils import *
+from .utils import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--epoch", type=int, default=0, help="epoch to start training from")

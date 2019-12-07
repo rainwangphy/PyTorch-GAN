@@ -8,8 +8,8 @@ import time
 import numpy as np
 import torch
 import torchvision.transforms as transforms
-from datasets import *
-from models import *
+from .datasets import *
+from .models import *
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image

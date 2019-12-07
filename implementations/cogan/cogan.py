@@ -1,7 +1,7 @@
 import argparse
 import os
 
-import mnistm
+# import .mnistm
 import numpy as np
 import torch
 import torch.nn as nn

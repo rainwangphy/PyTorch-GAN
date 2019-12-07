@@ -3,8 +3,8 @@ import os
 
 import torch
 from PIL import Image
-from datasets import denormalize, mean, std
-from models import GeneratorRRDB
+from .datasets import denormalize, mean, std
+from .models import GeneratorRRDB
 from torch.autograd import Variable
 from torchvision import transforms
 from torchvision.utils import save_image
